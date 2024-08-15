@@ -60,7 +60,7 @@ socket.on('message', (msg) => {
 
 socket.on('location', (message) => {
     // console.log(message)
-    const isSent = msg.id === socket.id
+    const isSent = message.id === socket.id
     const html = Mustache.render(locationTemplate, {
         username: message.user,
         url: message.url,

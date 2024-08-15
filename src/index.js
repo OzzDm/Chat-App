@@ -47,7 +47,7 @@ io.on('connection', (socket) => { //here 'connection' is a built-in event
         // io.emit('message', `Location: ${coords.latitude},${coords.longitude}`)
         const user = getUser(socket.id)
         // console.log(user)
-        io.to(user.room).emit('location', generateLocation(user.username, `https://www.google.com/maps?q=${coords.latitude},${coords.longitude}`))
+        io.to(user.room).emit('location', generateLocation(user, `https://www.google.com/maps?q=${coords.latitude},${coords.longitude}`))
         callback()
     })
 
